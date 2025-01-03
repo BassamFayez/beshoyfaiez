@@ -92,7 +92,7 @@ export function Navbar() {
               className="cursor-pointer"
               onClick={() => changeLocale("ru")}
             >
-              AR
+              RU
             </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
