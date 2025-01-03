@@ -21,7 +21,7 @@ const socialMedia = [
     id: 1,
     icon: avito,
     name: "Avito",
-    username: "@alkingbeashoy",
+    username: "beshoy faiez",
     link: "https://www.avito.ru/moskva/predlozheniya_uslug/vyezdnoy_barmen_barmen_na_meropriyatie_3761201737?utm_campaign=native&utm_medium=item_page_ios&utm_source=soc_sharing_seller",
   },
   {
