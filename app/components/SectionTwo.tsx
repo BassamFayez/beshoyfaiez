@@ -35,7 +35,7 @@ const socialMedia = [
     id: 3,
     icon: vk,
     name: "VK",
-    username: "@yousefsaeed668",
+    username: "@beshoy_faiez_97",
     link: "https://vk.com/id636381816",
   },
   {
