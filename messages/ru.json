@@ -1,0 +1,33 @@
+{
+  "Index": {
+    "logo": "Бешой",
+    "logo2": "файз",
+    "nav1": "Главная",
+    "nav2": "Проекты",
+    "nav3": "Связаться со мной",
+    "title": "Привет, я",
+    "titlenew": "Бешой Фаиз 🍷",
+    "experienceHero": "12 лет опыта, включая 5 лет в Москве.",
+    "location": "Москва, ул. Люблинская, 100",
+    "title2": "Я выездной бармен для мероприятий",
+    "button": "Связаться!",
+    "button2": "Скачать резюме",
+
+    "stack": "Explore my stack",
+    "stackdesc": "Check out the tools i use daily",
+    "Contact": "Contact",
+    "title3": "Passionate versitile Front-End Developer who loves to create",
+    "description": "I am a front-end developer with a passion for creating intuitive and visually appealing web applications. I have experience in building responsive and interactive user interfaces using modern technologies and frameworks. I am dedicated to crafting innovative and user-centric solutions that enhance user experience and address real-world challenges.",
+    "header": "Latest Projects",
+    "projectsButton": "View All Projects",
+    "dialogHeader": "Project Details",
+    "dialogVideo": "Project Preview Video",
+    "dialogDescription": "Project Description",
+    "dialogTech": "Technologies Used",
+    "viewProject": "View Project"
+  },
+  "Projects": {
+    "header": "Projects",
+    "description": "Here are some of the projects I have worked on. Click on a project to view more details."
+  }
+}
