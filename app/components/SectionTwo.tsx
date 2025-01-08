@@ -74,7 +74,7 @@ export function SectionTwo() {
             }}
           >
             <CarouselContent>
-              {Array.from({ length: 32 }, (_, index) => index).map(
+              {Array.from({ length: 56 }, (_, index) => index).map(
                 (item, index) => (
                   <CarouselItem
                     style={{
