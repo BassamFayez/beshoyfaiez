@@ -1,9 +1,8 @@
-import { ProjectDialog } from "@/app/components/ProjectDialog";
-import { ProjectsButton } from "@/app/components/ProjectsButton";
-import { ProjectsHeader } from "@/app/components/ProjectsHeader";
-
 import { ProjectsCard } from "@/lib/interface";
 import { client } from "@/lib/sanity";
+import { ProjectDialog } from "@/src/components/ProjectDialog";
+import { ProjectsButton } from "@/src/components/ProjectsButton";
+import { ProjectsHeader } from "@/src/components/ProjectsHeader";
 
 async function getData(locale: string) {
   const type = locale === "ar" ? "projectar" : "project";

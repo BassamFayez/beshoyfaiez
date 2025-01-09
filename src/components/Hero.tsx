@@ -1,5 +1,5 @@
 import Image from "next/image";
-import beshoy from "../../public/beshoy.jpg";
+import beshoy from "@/public/beshoy.jpg";
 import { useTranslations } from "next-intl";
 import { MapPin } from "lucide-react";
 

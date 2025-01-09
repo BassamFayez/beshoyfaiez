@@ -1,20 +1,20 @@
 import Image from "next/image";
 
-import { Card, CardHeader } from "@/components/ui/card";
+import { Card, CardHeader } from "@/src/components/ui/card";
 
-import avito from "../../public/avito.png";
-import insta from "../../public/insta.svg";
-import telegram from "../../public/telegram.webp";
-import vk from "../../public/vk.png";
+import avito from "@/public/avito.png";
+import insta from "@/public/insta.svg";
+import telegram from "@/public/telegram.webp";
+import vk from "@/public/vk.png";
 
-import { Button } from "@/components/ui/button";
+import { Button } from "@/src/components/ui/button";
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
-} from "@/components/ui/carousel";
+} from "@/src/components/ui/carousel";
 import { useTranslations } from "next-intl";
 const socialMedia = [
   {

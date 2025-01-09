@@ -1,5 +1,5 @@
-import { Card } from "@/components/ui/card";
-import me from "../../public/me.jpg";
+import { Card } from "@/src/components/ui/card";
+import me from "@/public/me.jpg";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 export function AboutSection() {
