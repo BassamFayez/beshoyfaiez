@@ -12,19 +12,23 @@
     "title2": "I'm an Off-site bartender for the events ",
 
     "button": "Get in Touch!",
-    "button2": "Download CV",
+    "button2": "View Menu",
     "stack": "Explore my stack",
     "stackdesc": "Check out the tools i use daily",
     "Contact": "Contact",
-    "title3": "Passionate versitile Front-End Developer who loves to create",
-    "description": "I am a front-end developer with a passion for creating intuitive and visually appealing web applications. I have experience in building responsive and interactive user interfaces using modern technologies and frameworks. I am dedicated to crafting innovative and user-centric solutions that enhance user experience and address real-world challenges.",
-    "header": "Latest Projects",
+    "title3": "Off-Site Bartender ",
+    "title4": "for Exclusive Events ",
+    "description": "With over a decade of experience in high-end cocktail bars and event bartending across Moscow and beyond, I provide premium mobile bar services tailored to any occasion. From birthdays and weddings to corporate events and private parties, I offer a seamless, turnkey bar experience—including alcohol selection, custom cocktail creation, glassware rental, and ice delivery. Having worked in renowned venues such as Soho Rooms, Club Home 16, Waves Restaurant & Lounge Bar, and The Grill & Chill Restaurant, I bring a deep understanding of mixology and hospitality. My fully equipped mobile bar ensures an engaging and visually captivating experience for your guests. Available for urgent bookings, holidays, and large-scale events (300+ guests), I am committed to elevating your event with expertly crafted cocktails and top-tier service.",
+    "header": "My Work",
     "projectsButton": "View All Projects",
     "dialogHeader": "Project Details",
     "dialogVideo": "Project Preview Video",
     "dialogDescription": "Project Description",
     "dialogTech": "Technologies Used",
-    "viewProject": "View Project"
+    "viewProject": "View Project",
+    "reviewHeader": "What Our ",
+    "reviewHeaderClients": "Clients ",
+    "reviewHeaderSay": "Say"
   },
   "Projects": {
     "header": "Projects",

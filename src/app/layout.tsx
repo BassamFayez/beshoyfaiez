@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Readex_Pro } from "next/font/google";
+import { Readex_Pro } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/src/components/Navbar";
 import { Footer } from "@/src/components/Footer";

@@ -49,7 +49,7 @@ const socialMedia = [
 export function SectionTwo() {
   const t = useTranslations("Index");
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 mt-10">
+    <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 mt-5 md:mt-10">
       <div className="w-full relative col-span-1">
         {/* <Image
           src={sideImage}
@@ -61,19 +61,19 @@ export function SectionTwo() {
           autoPlay
           loop
           muted
-          className="w-full h-fit object-cover rounded-2xl"
+          className="w-full h-fit object-cover rounded-2xl max-sm:h-[100%]"
         />
       </div>
       <div className="flex flex-col w-full col-span-1 lg:col-span-2 gap-4">
         <Card className="bg-gray-100 border-none  pb-8">
           <CardHeader>{/* <CardTitle>{t("stack")}</CardTitle> */}</CardHeader>
           <Carousel
-            className="w-[80%] mx-auto"
+            className="w-[85%] mx-auto"
             opts={{
               slidesToScroll: 2,
             }}
           >
-            <CarouselContent>
+            <CarouselContent className="px-4 sm:px-6">
               {Array.from({ length: 56 }, (_, index) => index).map(
                 (item, index) => (
                   <CarouselItem
@@ -94,8 +94,8 @@ export function SectionTwo() {
                 )
               )}
             </CarouselContent>
-            <CarouselNext className="w-10 h-10 " />
-            <CarouselPrevious className="w-10 h-10" />
+            <CarouselNext className=" w-10 h-10 " />
+            <CarouselPrevious className=" w-10 h-10" />
           </Carousel>
         </Card>
         <div className="grid grid-cols-2 md:grid-cols-4 w-full gap-4">
@@ -112,7 +112,9 @@ export function SectionTwo() {
               <h1 className="text-2xl font-medium pt-3">{item.name}</h1>
               <p className="text-muted-foreground">{item.username}</p>
               <Button className="mt-4" size="sm" asChild>
-                <a href={item.link}>{t("Contact")}</a>
+                <a href={item.link} target="_blank">
+                  {t("Contact")}
+                </a>
               </Button>
             </Card>
           ))}

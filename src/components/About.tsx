@@ -1,20 +1,30 @@
 import { Card } from "@/src/components/ui/card";
-import me from "@/public/me.jpg";
+import about1 from "@/public/about.jpg";
+import about2 from "@/public/about.2jpg.jpg";
+import about3 from "@/public/about3.jpg";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
-export function AboutSection() {
-  const t = useTranslations("Index");
+import { getLocale, getTranslations } from "next-intl/server";
+export async function AboutSection() {
+  const t = await getTranslations("Index");
+  const locale = await getLocale();
 
   return (
     <>
-      <div className="grid gird-cols-1 lg:grid-cols-3 gap-4 mt-10">
-        <Card className="col-span-1 lg:col-span-2 border-none bg-gray-100 p-8">
-          <h1 className="text-4xl lg:text-6xl">{t("title3")}</h1>
-          <p className="mt-4 text-muted-foreground lg:text-lg">
+      <div className="grid grid-cols-1 md:grid-cols-4  gap-4 mt-10">
+        <Card className="col-span-2  border-none bg-gray-100 p-8">
+          <h1 className="text-4xl lg:text-6xl">
+            {t("title3")}
+            <span className="text-5xl"> {t("title4")}</span>
+          </h1>
+
+          <p
+            className={`mt-4 text-muted-foreground lg:text-lg  ${locale === "en" ? "text-justify" : "text-left"}`}
+          >
             {t("description")}
           </p>
 
-          <div className="flex max-[450px]:flex-col gap-6 min-[450px]:items-center mt-5">
+          {/* <div className="flex max-[450px]:flex-col gap-6 min-[450px]:items-center mt-5">
             <a
               href="mailto:yousefsaeed668@gmail.com"
               className="relative inline-block text-lg group w-fit"
@@ -41,18 +51,37 @@ export function AboutSection() {
                 <span className="block text-md">{t("button2")}</span>
               </span>
             </a>
-          </div>
+          </div> */}
         </Card>
-
-        <div className="col-span-1">
-          <Image
-            src={me}
-            alt="Yousef Saeed"
-            className="h-[500px] object-cover rounded-lg w-full"
-          />
+        <div className="col-span-2">
+          <div className="flex justify-center items-center gap-4">
+            <div>
+              <Image
+                src={about3}
+                alt="Beshoy Faiez"
+                className="h-[300] object-cover object-top rounded-lg w-full"
+              />
+            </div>
+            <div>
+              <Image
+                src={about2}
+                alt="Beshoy Faiez"
+                className="h-[300] object-cover object-top  rounded-lg w-full"
+              />
+            </div>
+          </div>
+          <div className="pt-4">
+            <Image
+              src={about1}
+              alt="Beshoy Faiez"
+              className="h-[250px] md:h-[325px] object-cover object-center rounded-lg w-full"
+            />
+          </div>
         </div>
       </div>
-      <h2 className="text-3xl mt-10 font-semibold">{t("header")}</h2>
+      <h2 className="text-3xl mt-6 font-semibold text-center bg-gray-100 p-4 rounded-md border  ">
+        {t("header")}
+      </h2>
     </>
   );
 }

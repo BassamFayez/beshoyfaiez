@@ -50,7 +50,7 @@ export function Hero() {
             ></span>
           </a>
           <a
-            href="https://drive.usercontent.google.com/u/0/uc?id=1kUfIglR_8jeXvGi5irIX-gIt0zp6_BOg&export=download"
+            href="/menu.pdf"
             className="relative w-fit inline-flex  text-[0.8rem] md:text-[1rem] items-center justify-start px-6 py-3 overflow-hidden font-medium transition-all bg-primary/80 rounded-xl group"
           >
             <span className="absolute top-0 right-0 inline-block w-4 h-4 transition-all duration-500 ease-in-out bg-primary rounded group-hover:-mr-4 group-hover:-mt-4">
@@ -67,7 +67,7 @@ export function Hero() {
       <Image
         src={beshoy}
         alt="Beshoy Faiz"
-        className="col-span-2 h-[500px] object-cover object-top  rounded-2xl bg-gray-100"
+        className="col-span-2 h-[520px] object-cover object-top  rounded-2xl bg-gray-100"
         priority
       />
     </div>
