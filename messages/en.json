@@ -13,8 +13,7 @@
 
     "button": "Get in Touch!",
     "button2": "View Menu",
-    "stack": "Explore my stack",
-    "stackdesc": "Check out the tools i use daily",
+
     "Contact": "Contact",
     "title3": "Off-Site Bartender ",
     "title4": "for Exclusive Events ",
@@ -29,9 +28,5 @@
     "reviewHeader": "What Our ",
     "reviewHeaderClients": "Clients ",
     "reviewHeaderSay": "Say"
-  },
-  "Projects": {
-    "header": "Projects",
-    "description": "Here are some of the projects I have worked on. Click on a project to view more details."
   }
 }

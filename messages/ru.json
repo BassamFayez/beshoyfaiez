@@ -12,26 +12,13 @@
     "title2": "Я выездной бармен для мероприятий",
     "button": "Связаться!",
     "button2": "просмотреть меню",
-
-    "stack": "Explore my stack",
-    "stackdesc": "Check out the tools i use daily",
-    "Contact": "Contact",
+    "Contact": "контакт",
     "title3": "Выездной бармен",
     "title4": "для эксклюзивных мероприятий",
     "description": "Обладая более чем десятилетним опытом работы в элитных коктейльных барах и организации мероприятий в Москве и за её пределами, я предоставляю первоклассные мобильные барные услуги, адаптированные к любому случаю. От дней рождений и свадеб до корпоративных мероприятий и частных вечеринок — я обеспечиваю безупречный сервис «под ключ», включая подбор алкоголя, создание авторских коктейлей, аренду посуды и доставку льда. Работая в таких известных заведениях, как Soho Rooms, Club Home 16, Waves Restaurant & Lounge Bar и The Grill & Chill Restaurant, я приобрёл глубокие знания в области миксологии и гостеприимства. Мой полностью оснащённый мобильный бар гарантирует вашим гостям увлекательный и эстетически привлекательный опыт. Доступен для срочных заказов, работы в праздничные дни и на масштабных мероприятиях (300+ гостей). Я стремлюсь поднять уровень вашего мероприятия с помощью профессионально приготовленных коктейлей и высококлассного сервиса.",
     "header": "Мои работы",
-    "projectsButton": "View All Projects",
-    "dialogHeader": "Project Details",
-    "dialogVideo": "Project Preview Video",
-    "dialogDescription": "Project Description",
-    "dialogTech": "Technologies Used",
-    "viewProject": "View Project",
     "reviewHeader": "Что о нас",
     "reviewHeaderClients": " клиенты ",
     "reviewHeaderSay": "говорят наши "
-  },
-  "Projects": {
-    "header": "Projects",
-    "description": "Here are some of the projects I have worked on. Click on a project to view more details."
   }
 }
