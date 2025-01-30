@@ -45,7 +45,7 @@ export async function AboutSection() {
               className="bg-red-700 rounded-lg mt-4 text-white w-36 h-12 px-2 text-center flex items-center group relative"
             >
               <Image
-                src="/Youtube.svg"
+                src="/youtubeImage.svg"
                 alt="youtube"
                 width={30}
                 height={30}
