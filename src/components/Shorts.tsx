@@ -1,5 +1,6 @@
 "use client";
-import { useRef } from "react";
+
+import { useRef, useState } from "react";
 import {
   Carousel,
   CarouselContent,
@@ -7,92 +8,117 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "./ui/carousel";
-const shortsLink = [
-  "https://www.youtube.com/embed/S0McztpfNmw",
-  "https://www.youtube.com/embed/OAH2YfFPA00",
-  "https://www.youtube.com/embed/tcZ-SMwjKOQ",
-  "https://www.youtube.com/embed/DKLCFMRAC8E",
-  "https://www.youtube.com/embed/3ewHVvEVIdg",
-  "https://www.youtube.com/embed/KZ-FSYfFDpc",
-  "https://www.youtube.com/embed/O8VdpYQ17DU",
-  "https://www.youtube.com/embed/Au9uUWAQOmQ",
-  "https://www.youtube.com/embed/29ZcgDFcE9A",
-  "https://www.youtube.com/embed/bfvjfEw86ww",
-  "https://www.youtube.com/embed/QSA71Wo7KBU",
-  "https://www.youtube.com/embed/yKSaP2vjBzo",
-  "https://www.youtube.com/embed/BIWeOVNGsDI",
-  "https://www.youtube.com/embed/KIew2kyaYDg",
-  "https://www.youtube.com/embed/JMX0hQ4D_mU",
-  "https://www.youtube.com/embed/gFwKL3Q9dqM",
-  "https://www.youtube.com/embed/btH89uVldp8",
-  "https://www.youtube.com/embed/c_ug-e-YayI",
-  "https://www.youtube.com/embed/YAD-6lrnxVg",
-  "https://www.youtube.com/embed/oH9f3fq8ARU",
-  "https://www.youtube.com/embed/zSbYTCHPxQI",
-  "https://www.youtube.com/embed/JbiBkpJkSlE",
-];
+import YouTube, { YouTubeProps } from "react-youtube";
+import Image from "next/image";
+
+interface VideoData {
+  id: string;
+  thumbnail: string;
+}
+
+const shortsData: VideoData[] = [
+  "S0McztpfNmw",
+  "OAH2YfFPA00",
+  "tcZ-SMwjKOQ",
+  "DKLCFMRAC8E",
+  "3ewHVvEVIdg",
+  "KZ-FSYfFDpc",
+  "O8VdpYQ17DU",
+  "Au9uUWAQOmQ",
+  "29ZcgDFcE9A",
+  "bfvjfEw86ww",
+  "QSA71Wo7KBU",
+  "yKSaP2vjBzo",
+  "BIWeOVNGsDI",
+  "KIew2kyaYDg",
+  "JMX0hQ4D_mU",
+  "gFwKL3Q9dqM",
+  "btH89uVldp8",
+  "c_ug-e-YayI",
+  "YAD-6lrnxVg",
+  "oH9f3fq8ARU",
+  "zSbYTCHPxQI",
+  "JbiBkpJkSlE",
+].map((id) => ({
+  id,
+  thumbnail: `https://i.ytimg.com/vi/${id}/hqdefault.jpg`,
+}));
+
 export default function Shorts() {
-  const containerRef = useRef<HTMLDivElement | null>(null);
-  let touchStartX = 0;
-  let touchEndX = 0;
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [activeVideo, setActiveVideo] = useState<string | null>(null);
 
-  const handleTouchStart = (e: React.TouchEvent<HTMLDivElement>): void => {
-    touchStartX = e.touches[0].clientX;
-  };
+  const opts: YouTubeProps["opts"] = {
+    width: "100%",
+    height: "100%",
 
-  const handleTouchMove = (e: React.TouchEvent<HTMLDivElement>): void => {
-    touchEndX = e.touches[0].clientX;
-  };
-
-  const handleTouchEnd = (): void => {
-    const swipeThreshold = 50;
-    const difference = touchStartX - touchEndX;
-
-    if (Math.abs(difference) > swipeThreshold && containerRef.current) {
-      if (difference > 0) {
-        const nextButton =
-          containerRef.current.querySelector<HTMLButtonElement>(
-            "[data-carousel-next]"
-          );
-        nextButton?.click();
-      } else {
-        const prevButton =
-          containerRef.current.querySelector<HTMLButtonElement>(
-            "[data-carousel-prev]"
-          );
-        prevButton?.click();
-      }
-    }
+    playerVars: {
+      autoplay: 1,
+      modestbranding: 1,
+      rel: 0,
+      controls: 1,
+    },
   };
 
   return (
-    <div
-      className="mt-6"
-      ref={containerRef}
-      onTouchStart={handleTouchStart}
-      onTouchMove={handleTouchMove}
-      onTouchEnd={handleTouchEnd}
-    >
+    <div ref={containerRef} className="mt-16">
       <Carousel>
         <CarouselContent>
-          {shortsLink.map((item) => (
-            <CarouselItem
-              key={item}
-              className="basis-full md:basis-1/3 flex justify-center"
-            >
-              <iframe
-                width="356"
-                height="634"
-                className="rounded-lg pointer-events-none sm:pointer-events-auto"
-                src={`${item}?enablejsapi=1`}
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowFullScreen
-              />
+          {shortsData.map((video) => (
+            <CarouselItem className=" md:basis-1/3 " key={video.id}>
+              <div
+                key={video.id}
+                style={{ aspectRatio: "9/16" }}
+                className=" relative rounded-lg overflow-hidden"
+              >
+                {activeVideo === video.id ? (
+                  <div className="w-full h-full">
+                    <YouTube
+                      videoId={video.id}
+                      opts={opts}
+                      id="player"
+                      className="w-full h-full rounded-lg"
+                      onEnd={() => setActiveVideo(null)}
+                      style={{
+                        position: "absolute",
+                        top: 0,
+                        left: 0,
+                        width: "100%",
+                        height: "100%",
+                      }}
+                    />
+                  </div>
+                ) : (
+                  <div
+                    onClick={() => setActiveVideo(video.id)}
+                    className="cursor-pointer relative w-full h-full"
+                  >
+                    <Image
+                      fill
+                      src={video.thumbnail}
+                      alt="Video thumbnail"
+                      className="w-full h-full object-cover rounded-lg"
+                      loading="lazy"
+                    />
+                    <div className="absolute inset-0 flex items-center justify-center bg-black/20 hover:bg-black/30 transition-colors">
+                      <div className="w-12 h-12 bg-black/70 rounded-full flex items-center justify-center">
+                        <svg
+                          className="w-6 h-6 text-white"
+                          fill="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path d="M8 5v14l11-7z" />
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                )}
+              </div>
             </CarouselItem>
           ))}
         </CarouselContent>
-        <CarouselNext className="max-sm:-right-3" data-carousel-next />
-        <CarouselPrevious className="max-sm:-left-3" data-carousel-prev />
+        <CarouselPrevious className="max-sm:left-2 sm:flex" />
+        <CarouselNext className=" max-sm:right-2 sm:flex" />
       </Carousel>
     </div>
   );

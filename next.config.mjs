@@ -9,6 +9,12 @@ const nextConfig = {
         hostname: "cdn.sanity.io",
         protocol: "https",
       },
+      {
+        protocol: "https",
+        hostname: "i.ytimg.com",
+        port: "",
+        pathname: "/vi/**",
+      },
     ],
   },
 };
