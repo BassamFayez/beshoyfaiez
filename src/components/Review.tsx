@@ -22,7 +22,8 @@ export default function Review() {
         }}
         plugins={[
           Autoplay({
-            delay: 1000,
+            delay: 2000,
+            stopOnInteraction: false,
           }),
         ]}
       >
