@@ -42,17 +42,6 @@ export function MobileMenu() {
           >
             {t("nav1")}
           </Link>
-          <Link
-            href="/projects"
-            className={cn(
-              location === "/projects"
-                ? "bg-muted"
-                : "hover:bg-muted hover:bg-opacity-75",
-              "group flex items-center px-2 py-2 text-md font-semibold rounded-md"
-            )}
-          >
-            {t("nav2")}
-          </Link>
         </div>
         <SheetFooter className="mt-5">
           <SheetClose asChild>

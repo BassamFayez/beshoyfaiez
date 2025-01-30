@@ -1,10 +1,11 @@
 import Image from "next/image";
 import beshoy from "@/public/beshoy.jpg";
-import { useTranslations } from "next-intl";
 import { MapPin } from "lucide-react";
+import { getLocale, getTranslations } from "next-intl/server";
 
-export function Hero() {
-  const t = useTranslations("Index");
+export async function Hero() {
+  const t = await getTranslations("Index");
+  const locale = await getLocale();
   return (
     <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
       <div className="col-span-1 flex flex-col  h-full bg-gray-100 min-h-[500px] lg:min-h-[300px] rounded-2xl p-8">
@@ -58,7 +59,11 @@ export function Hero() {
             </span>
             <span className="absolute bottom-0 left-0 w-full h-full transition-all duration-500 ease-in-out delay-200 -translate-x-full translate-y-full bg-primary/70 rounded-2xl group-hover:mb-12 group-hover:translate-x-0"></span>
             <span className="relative w-full text-left text-white transition-colors duration-200 ease-in-out group-hover:text-white">
-              <span className="block text-md">{t("button2")}</span>
+              <span
+                className={`block text-md ${locale === "ru" ? "text-sm" : ""}`}
+              >
+                {t("button2")}
+              </span>
             </span>
           </a>
         </div>
@@ -67,7 +72,7 @@ export function Hero() {
       <Image
         src={beshoy}
         alt="Beshoy Faiz"
-        className="col-span-2 h-[520px] object-cover object-top  rounded-2xl bg-gray-100"
+        className="md:col-span-2 h-[520px] object-cover object-top  rounded-2xl bg-gray-100"
         priority
       />
     </div>

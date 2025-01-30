@@ -11,7 +11,7 @@
     "location": "Москва, ул. Люблинская, 100",
     "title2": "Я выездной бармен для мероприятий",
     "button": "Связаться!",
-    "button2": "Скачать резюме",
+    "button2": "просмотреть меню",
 
     "stack": "Explore my stack",
     "stackdesc": "Check out the tools i use daily",
@@ -27,8 +27,8 @@
     "dialogTech": "Technologies Used",
     "viewProject": "View Project",
     "reviewHeader": "Что о нас",
-    "reviewHeaderClients": "говорят наши",
-    "reviewHeaderSay": "клиенты"
+    "reviewHeaderClients": " клиенты ",
+    "reviewHeaderSay": "говорят наши "
   },
   "Projects": {
     "header": "Projects",

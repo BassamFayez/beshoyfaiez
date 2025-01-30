@@ -1,3 +1,5 @@
+"use client";
+import { useRef } from "react";
 import {
   Carousel,
   CarouselContent,
@@ -30,8 +32,47 @@ const shortsLink = [
   "https://www.youtube.com/embed/JbiBkpJkSlE",
 ];
 export default function Shorts() {
+  const containerRef = useRef<HTMLDivElement | null>(null);
+  let touchStartX = 0;
+  let touchEndX = 0;
+
+  const handleTouchStart = (e: React.TouchEvent<HTMLDivElement>): void => {
+    touchStartX = e.touches[0].clientX;
+  };
+
+  const handleTouchMove = (e: React.TouchEvent<HTMLDivElement>): void => {
+    touchEndX = e.touches[0].clientX;
+  };
+
+  const handleTouchEnd = (): void => {
+    const swipeThreshold = 50;
+    const difference = touchStartX - touchEndX;
+
+    if (Math.abs(difference) > swipeThreshold && containerRef.current) {
+      if (difference > 0) {
+        const nextButton =
+          containerRef.current.querySelector<HTMLButtonElement>(
+            "[data-carousel-next]"
+          );
+        nextButton?.click();
+      } else {
+        const prevButton =
+          containerRef.current.querySelector<HTMLButtonElement>(
+            "[data-carousel-prev]"
+          );
+        prevButton?.click();
+      }
+    }
+  };
+
   return (
-    <div className="mt-6">
+    <div
+      className="mt-6"
+      ref={containerRef}
+      onTouchStart={handleTouchStart}
+      onTouchMove={handleTouchMove}
+      onTouchEnd={handleTouchEnd}
+    >
       <Carousel>
         <CarouselContent>
           {shortsLink.map((item) => (
@@ -42,16 +83,16 @@ export default function Shorts() {
               <iframe
                 width="356"
                 height="634"
-                className="rounded-lg"
-                src={item}
+                className="rounded-lg pointer-events-none sm:pointer-events-auto"
+                src={`${item}?enablejsapi=1`}
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowFullScreen
-              ></iframe>
+              />
             </CarouselItem>
           ))}
         </CarouselContent>
-        <CarouselNext className="max-sm:-right-3" />
-        <CarouselPrevious className="max-sm:-left-3" />
+        <CarouselNext className="max-sm:-right-3" data-carousel-next />
+        <CarouselPrevious className="max-sm:-left-3" data-carousel-prev />
       </Carousel>
     </div>
   );

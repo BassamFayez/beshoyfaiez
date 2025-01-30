@@ -7,16 +7,11 @@ export async function Footer() {
   return (
     <footer className="my-12">
       <ul className="flex flex-wrap justify-center">
-        <div className="px-5 py-2">
+        <li className="px-5 py-2">
           <Link href="/" className="text-muted-foreground">
             {t("nav1")}
           </Link>
-        </div>
-        <div className="px-5 py-2">
-          <Link href="/projects" className="text-muted-foreground">
-            {t("nav2")}
-          </Link>
-        </div>
+        </li>
       </ul>
 
       <p className="mt-2 text-center  text-muted-foreground">

@@ -61,7 +61,7 @@ export function SectionTwo() {
           autoPlay
           loop
           muted
-          className="w-full h-fit object-cover rounded-2xl max-sm:h-[100%]"
+          className="w-full h-full object-cover rounded-2xl max-sm:h-[100%]"
         />
       </div>
       <div className="flex flex-col w-full col-span-1 lg:col-span-2 gap-4">
@@ -73,7 +73,7 @@ export function SectionTwo() {
               slidesToScroll: 2,
             }}
           >
-            <CarouselContent className="px-4 sm:px-6">
+            <CarouselContent>
               {Array.from({ length: 56 }, (_, index) => index).map(
                 (item, index) => (
                   <CarouselItem
@@ -81,15 +81,17 @@ export function SectionTwo() {
                       aspectRatio: "1 / 1.18",
                     }}
                     key={index}
-                    className="relative basis-1/2 pl-0 ml-4"
+                    className="basis-1/2 pl-4"
                   >
-                    <Image
-                      fill
-                      key={index}
-                      src={`/drinks/${index + 1}.jpg`}
-                      alt="Icon"
-                      className="object-center object-cover rounded-lg select-none "
-                    />
+                    <div className=" relative h-full">
+                      <Image
+                        fill
+                        key={index}
+                        src={`/drinks/${index + 1}.jpg`}
+                        alt="Icon"
+                        className="object-center object-cover rounded-lg select-none "
+                      />
+                    </div>
                   </CarouselItem>
                 )
               )}

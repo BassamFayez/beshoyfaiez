@@ -5,6 +5,7 @@ import about3 from "@/public/about3.jpg";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { getLocale, getTranslations } from "next-intl/server";
+import { Youtube } from "lucide-react";
 export async function AboutSection() {
   const t = await getTranslations("Index");
   const locale = await getLocale();
@@ -12,10 +13,12 @@ export async function AboutSection() {
   return (
     <>
       <div className="grid grid-cols-1 md:grid-cols-4  gap-4 mt-10">
-        <Card className="col-span-2  border-none bg-gray-100 p-8">
+        <Card className="col-span-2  border-none bg-gray-100 p-8 pb-4">
           <h1 className="text-4xl lg:text-6xl">
             {t("title3")}
-            <span className="text-5xl"> {t("title4")}</span>
+            <span className="text-3xl lg:text-5xl">
+              <br /> {t("title4")}
+            </span>
           </h1>
 
           <p
@@ -23,6 +26,36 @@ export async function AboutSection() {
           >
             {t("description")}
           </p>
+          <div>
+            {/* <button className="bg-red-700 rounded-lg text-white w-36 h-10 px-2  text-center  flex gap-4 items-center group relative transition">
+              <Image
+                src="/youtube.svg"
+                alt="youtube"
+                width={30}
+                height={30}
+                className="group-hover:mx-auto transition-all duration-300 ease-in-out"
+              />
+              <span className="group-hover:absolute group-hover:-right-4 group-hover:opacity-0 transition">
+                Youtube
+              </span>
+            </button> */}
+            <a
+              href="https://www.youtube.com/@beshoyfaiez1205"
+              target="_blank"
+              className="bg-red-700 rounded-lg mt-4 text-white w-36 h-12 px-2 text-center flex items-center group relative"
+            >
+              <Image
+                src="/youtube.svg"
+                alt="youtube"
+                width={30}
+                height={30}
+                className="transition-all duration-500 ease-in-out transform group-hover:translate-x-12"
+              />
+              <span className="absolute left-14 transition-all duration-500 ease-in-out transform group-hover:translate-x-8 group-hover:opacity-0">
+                Youtube
+              </span>
+            </a>
+          </div>
 
           {/* <div className="flex max-[450px]:flex-col gap-6 min-[450px]:items-center mt-5">
             <a
@@ -59,14 +92,20 @@ export async function AboutSection() {
               <Image
                 src={about3}
                 alt="Beshoy Faiez"
-                className="h-[300] object-cover object-top rounded-lg w-full"
+                style={{
+                  aspectRatio: locale === "ru" ? "1/1.9" : "",
+                }}
+                className=" object-cover object-top rounded-lg w-full"
               />
             </div>
             <div>
               <Image
                 src={about2}
                 alt="Beshoy Faiez"
-                className="h-[300] object-cover object-top  rounded-lg w-full"
+                style={{
+                  aspectRatio: locale === "ru" ? "1/1.9" : "",
+                }}
+                className=" object-cover object-top  rounded-lg w-full"
               />
             </div>
           </div>
@@ -74,7 +113,7 @@ export async function AboutSection() {
             <Image
               src={about1}
               alt="Beshoy Faiez"
-              className="h-[250px] md:h-[325px] object-cover object-center rounded-lg w-full"
+              className={`h-[250px] ${locale === "ru" ? "md:h-[370px]" : "md:h-[325px]"} object-cover object-center rounded-lg w-full`}
             />
           </div>
         </div>

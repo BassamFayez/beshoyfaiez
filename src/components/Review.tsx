@@ -1,9 +1,11 @@
+"use client";
 import { Carousel, CarouselContent, CarouselItem } from "./ui/carousel";
 import Image from "next/image";
-import { getTranslations } from "next-intl/server";
+import { useTranslations } from "next-intl";
+import Autoplay from "embla-carousel-autoplay";
 
-export default async function Review() {
-  const t = await getTranslations("Index");
+export default function Review() {
+  const t = useTranslations("Index");
 
   return (
     <div className="mt-10">
@@ -14,7 +16,16 @@ export default async function Review() {
         </span>
         {t("reviewHeaderSay")}
       </h2>
-      <Carousel>
+      <Carousel
+        opts={{
+          loop: true,
+        }}
+        plugins={[
+          Autoplay({
+            delay: 1000,
+          }),
+        ]}
+      >
         <CarouselContent>
           {Array.from({ length: 10 }, (_, index) => index).map(
             (item, index) => (
