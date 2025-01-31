@@ -12,6 +12,19 @@ export const metadata: Metadata = {
   title: "Beshoy Faiez ",
   description:
     "Off-site bartender for the events 12 years of experience, including 5 years in Moscow.",
+  openGraph: {
+    title: "Beshoy Faiez ",
+    description:
+      "Off-site bartender for the events 12 years of experience, including 5 years in Moscow.",
+    images: [
+      {
+        url: "/opengraph-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Portfolio Open Graph Image",
+      },
+    ],
+  },
 };
 
 export default async function RootLayout({
