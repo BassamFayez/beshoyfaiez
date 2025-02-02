@@ -12,6 +12,9 @@ export const metadata: Metadata = {
   title: "Beshoy Faiez ",
   description:
     "Off-site bartender for the events 12 years of experience, including 5 years in Moscow.",
+    verification:{
+      google:"AX8Of7Fm_aCO1FMtoL5EryCqfCn6kkVDlVNdi3fPX1I"
+    },
   openGraph: {
     title: "Beshoy Faiez ",
     description:
