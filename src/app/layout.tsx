@@ -13,7 +13,9 @@ export const metadata: Metadata = {
   description:
     "Off-site bartender for the events 12 years of experience, including 5 years in Moscow.",
     verification:{
-      google:"AX8Of7Fm_aCO1FMtoL5EryCqfCn6kkVDlVNdi3fPX1I"
+      google:"AX8Of7Fm_aCO1FMtoL5EryCqfCn6kkVDlVNdi3fPX1I",
+      yandex:"ff0ac26d23e8ad11"
+
     },
   openGraph: {
     title: "Beshoy Faiez ",
